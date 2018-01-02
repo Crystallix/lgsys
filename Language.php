@@ -3,6 +3,7 @@
 namespace lgsys;
 
 use pocketmine\utils\Config;
+use pocketmine\utils\TextFormat;
 
 class Language
 {
@@ -46,7 +47,7 @@ class Language
 
         $msg = $this->translations[$name];
 
-        $msg = \str_replace("{NL}", PHP_EOL, $msg);
+        $msg = \str_replace("{NL}", TextFormat::RESET . " \n", $msg);
         $msg = \str_replace("&", "§", $msg);
 
         if (sizeof($args) > 0) {
